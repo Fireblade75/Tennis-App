@@ -1,0 +1,22 @@
+[
+    {
+        "firstName": "Robert",
+        "lastName": "Boomkamp",
+        "dssRank": 3
+    },
+    {
+        "firstName": "Alex",
+        "lastName": "Struisland",
+        "dssRank": 4
+    },
+    {
+        "firstName": "Pete",
+        "lastName": "Kempen",
+        "dssRank": 6
+    },
+    {
+        "firstName": "George",
+        "lastName": "Denver",
+        "dssRank": 5
+    }
+]
