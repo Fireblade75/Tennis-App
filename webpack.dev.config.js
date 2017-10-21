@@ -43,6 +43,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('notflix.css'),
+        new ExtractTextPlugin('style.css'),
     ]
 }
