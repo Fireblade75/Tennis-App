@@ -37,10 +37,10 @@ module.exports = {
             // Check if the match date is valid
             const matchMoment = moment(matchDateStr, "YYYY-MM-DD", true);
             if (!matchMoment.isValid()) {
-                reject(new ErrorTypes.InvalidRequestError("game date should have format yyyy-mm-dd"));
+                reject(new ErrorTypes.InvalidRequestError("match date should have format yyyy-mm-dd"));
                 return;
             } else if (matchMoment.isAfter(new Date())) {
-                reject(new ErrorTypes.InvalidRequestError("game date can not be in the future"));
+                reject(new ErrorTypes.InvalidRequestError("match date can not be in the future"));
                 return;
             }
             const matchDate = matchMoment.toDate();
