@@ -1,15 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <title>Tennis App</title>
+    <!-- Include Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <!-- Include our dependancies -->
     <link href="assets/style.css" rel="stylesheet" type="text/css">
     <script src='assets/app.js'></script>
 </head>
+
 <body>
-    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class='container-fluid'>
+            <a class="navbar-brand" href="#">Tennis App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#heaerNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="heaerNavbar">
+                <div class="navbar-nav ml-auto">
+                    <a class='nav-item nav-link active' href="#">Home</a>
+                    <a class='nav-item nav-link' href="#">Matches</a>
+                    <a class='nav-item nav-link' href="#">Players</a>
+                    <a class='nav-item nav-link' href="#">Log in</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id='react-container'>
+        <div class='jumbotron jumbotron-fluid jumbotron-head-image'>
+            <h1>Tennis App</h1>
+        </div>
+        <main class='container-fluid'>
+            <section class='row justify-content-center'>
+                <div class='col-12 col-md-10 col-lg-8 col-xl-6'>
+                    <p class='lead'>
+                        Tennis App is a tool for storing the results of matches between tennis players. Users can view results of players and add
+                        players and matches.
+                    </p>
+                    <p>
+                        The users can add player themselves and can add matches between this players. This helps them to keep track of their own
+                        results of those of their favorite players. This helps them to choose an opnent for their next match
+                        or to find out if a match is going to be interesting.
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer class="bd-footer text-muted bg-light">
+            <div class="fluid-container">
+                Copyright &copy; 2017
+                <a href='https://github.com/Fireblade75' />Fireblade75</a>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>

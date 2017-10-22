@@ -13,7 +13,10 @@ module.exports = {
     },
     devServer: {
         hot: true,
-        inline: true
+        inline: true,
+        watchOptions: {
+            ignored: ['node_modules/', 'test/', 'server/', 'test/', 'public/'],
+        },
     },
     module: {
         rules: [
@@ -27,7 +30,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'less-loader']
+                    use: ['css-loader?url=false', 'less-loader']
                 })
             },
             {
