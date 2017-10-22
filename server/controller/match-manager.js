@@ -35,7 +35,7 @@ module.exports = {
             }
 
             // Check if the match date is valid
-            const matchMoment = moment(matchDateStr, "DD-MM-YYYY", true);
+            const matchMoment = moment(matchDateStr, "YYYY-MM-DD", true);
             if (!matchMoment.isValid()) {
                 reject(new ErrorTypes.InvalidRequestError("game date should have format yyyy-mm-dd"));
                 return;
