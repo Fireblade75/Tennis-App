@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const Match = require('../model/match').Match;
 const PlayerManager = require('./player-manager');
 const ErrorTypes = require('../model/error-types');
+const moment = require('moment');
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 
@@ -16,14 +17,12 @@ module.exports = {
      * @param {ObjectId} outPlayer the out player
      * @param {number} homeScore the score of the home player
      * @param {number} outScore the score of the home player
+     * @param {string} matchDate the date of the match
      * @returns {Promise.<User, ApiError>}} resolves when the object is stored
      */
-    createMatch: async(function (homePlayer, outPlayer, homeScore, outScore) {
+    createMatch: async(function (homePlayer, outPlayer, homeScore, outScore, matchDateStr) {
         return new Promise(function (resolve, reject) {
-            if (!mongoose.Types.ObjectId.isValid(homePlayer) || !mongoose.Types.ObjectId.isValid(outPlayer)) {
-                reject(new ErrorTypes.InvalidRequestError("Invalid player id"));
-                return;
-            }
+            // Check if the scores are valid
             if (typeof(homeScore) != 'number' || typeof(outScore) != 'number') {
                 reject(new ErrorTypes.InvalidRequestError("Invalid score id"));
                 return;
@@ -32,6 +31,23 @@ module.exports = {
             outScore = Math.floor(Number(outScore));
             if (homeScore < 0 || outScore < 0) {
                 reject(new ErrorTypes.InvalidRequestError("Invalid score"));
+                return;
+            }
+
+            // Check if the match date is valid
+            const matchMoment = moment(matchDateStr);
+            if (!matchMoment.isValid()) {
+                reject(new ErrorTypes.InvalidRequestError("game date should have format yyyy-mm-dd"));
+                return;
+            } else if (matchMoment.isAfter(new Date())) {
+                reject(new ErrorTypes.InvalidRequestError("game date can not be in the future"));
+                return;
+            }
+            const matchDate = matchMoment.toDate();
+ 
+            // Check if the players exist
+            if (!mongoose.Types.ObjectId.isValid(homePlayer) || !mongoose.Types.ObjectId.isValid(outPlayer)) {
+                reject(new ErrorTypes.InvalidRequestError("Invalid player id"));
                 return;
             }
             try {
@@ -45,7 +61,9 @@ module.exports = {
                     reject(new ErrorTypes.InvalidRequestError("Out player does not exist"));
                     return;
                 }
-                const match  = new Match({homePlayer, outPlayer, homeScore, outScore });
+
+                // Create the new match
+                const match  = new Match({homePlayer, outPlayer, homeScore, outScore, matchDate });
                 await(match.save());
                 resolve(match);
             } catch (err) {

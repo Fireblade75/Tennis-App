@@ -100,6 +100,12 @@ function getPlayers() {
     });
 }
 
+function createRandomDate() {
+    let month = ('0' + Math.ceil(Math.random()*12)).slice(-2);
+    let day = ('0' + Math.floor(Math.random()*28)).slice(-2);
+    return `2016-${month}-${day}`;
+}
+
 describe("Create data", function () {
     before(async(function(){
         await(prepareTest());
@@ -147,7 +153,8 @@ describe("Create data", function () {
                     homePlayer: homePlayer.id,
                     outPlayer: outPlayer.id,
                     homeScore,
-                    outScore
+                    outScore,
+                    matchDate: createRandomDate()
                 };
                 let result = await(createMatch(match, token));
                 return outPlayer;

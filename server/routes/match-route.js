@@ -8,10 +8,12 @@ const await = require('asyncawait/await');
 router.post('/', async(function (req, res) {
     let error;
     if (req.currentUser !== undefined) {
-        const { homePlayer, outPlayer, homeScore, outScore } = req.body;
-        if (homePlayer && outPlayer && (homeScore || homeScore === 0) && (outScore || outScore === 0)) {
+        const { homePlayer, outPlayer, homeScore, outScore, matchDate } = req.body;
+        if (!homePlayer || !outPlayer || !matchDate || homeScore == null || outScore == null) {
+            error = new ErrorType.InvalidRequestError();
+        } else {
             try {
-                const match = await(MatchManager.createMatch(homePlayer, outPlayer, homeScore, outScore));
+                const match = await(MatchManager.createMatch(homePlayer, outPlayer, homeScore, outScore, matchDate));
                 if (match) {
                     res.status(201);
                     res.end();
@@ -19,9 +21,6 @@ router.post('/', async(function (req, res) {
             } catch (err) {
                 error = err;
             }
-        } else {
-            console.log(req.body);
-            error = new ErrorType.InvalidRequestError();
         }
     } else {
         error = new ErrorType.UnauthorizedError();
