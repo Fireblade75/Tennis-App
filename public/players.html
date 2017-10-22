@@ -32,29 +32,51 @@
 
                 <div class="collapse navbar-collapse" id="heaerNavbar">
                     <div class="navbar-nav ml-auto">
-                        <a class='nav-item nav-link active' href="index.html">Home</a>
+                        <a class='nav-item nav-link' href="index.html">Home</a>
                         <a class='nav-item nav-link' href="matches.html">Matches</a>
-                        <a class='nav-item nav-link' href="players.html">Players</a>
+                        <a class='nav-item nav-link active' href="players.html">Players</a>
                         <a class='nav-item nav-link' href="#">Log in</a>
                     </div>
                 </div>
             </div>
         </nav>
-        <div class='jumbotron jumbotron-fluid jumbotron-head-image'>
-            <h1>Tennis App</h1>
-        </div>
         <main class='container-fluid'>
             <section class='row justify-content-center'>
                 <div class='col-12 col-md-10 col-lg-8 col-xl-6'>
-                    <p class='lead'>
-                        Tennis App is a tool for storing the results of matches between tennis players. Users can view results of players and add
-                        players and matches.
-                    </p>
-                    <p>
-                        The users can add player themselves and can add matches between this players. This helps them to keep track of their own
-                        results of those of their favorite players. This helps them to choose an opnent for their next match
-                        or to find out if a match is going to be interesting.
-                    </p>
+                    <div class="mb-5">
+                        <h1>Players</h1>
+                        <p class='lead'>
+                            This is an overview of all players currently added to the app. Players are added by registered users of the webiste. If you
+                            are logged in, you can add players yourself.
+                        </p>
+                        <p>
+                            <a class='btn btn-primary text-white'>Add Player</a>
+                        </p>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="table-dark">
+                                <th scope="col">#</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">DSS Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mike</td>
+                                <td>Denver</td>
+                                <td>4,977</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Rudy</td>
+                                <td>Simson</td>
+                                <td>4,070</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </main>
