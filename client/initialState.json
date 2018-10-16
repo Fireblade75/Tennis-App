@@ -1,0 +1,59 @@
+{
+    "user": {
+        "username": "george"
+    },
+    "players": [
+        [
+            {
+                "firstName": "George",
+                "lastName": "Denver",
+                "dssRank": 5,
+                "id": "59ec936d0941be8b3b492fed"
+            },
+            {
+                "firstName": "Fred",
+                "lastName": "Johnson",
+                "dssRank": 4,
+                "id": "59ec936d0941be8b3b492fed"
+            }
+        ]
+    ],
+    "matches": [
+        {
+            "homePlayer": {
+                "firstName": "George",
+                "lastName": "Denver",
+                "dssRank": 5,
+                "id": "59ec936d0941be8b3b492fed"
+            },
+            "outPlayer": {
+                "firstName": "Fred",
+                "lastName": "Johnson",
+                "dssRank": 4,
+                "id": "59ec936d0941be8b3b492fed"
+            },
+            "homeScore": 0,
+            "outScore": 5,
+            "matchDate": "2016-11-12",
+            "id": "59ec936d0941be8b3b492fee"
+        },
+        {
+            "homePlayer": {
+                "firstName": "George",
+                "lastName": "Denver",
+                "dssRank": 5,
+                "id": "59ec936d0941be8b3b492fed"
+            },
+            "outPlayer": {
+                "firstName": "Fred",
+                "lastName": "Johnson",
+                "dssRank": 4,
+                "id": "59ec936d0941be8b3b492fed"
+            },
+            "homeScore": 0,
+            "outScore": 1,
+            "matchDate": "2016-04-20",
+            "id": "59ec936e0941be8b3b492fef"
+        }
+    ]
+}
